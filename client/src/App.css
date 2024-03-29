@@ -1,0 +1,215 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+  }
+  img{
+    max-width: 100%;
+  }
+  body{
+    color : #222;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  main{
+    padding: 10px;
+    /* border: 1px solid red; */
+    width: 90vw;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  header{
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid black; */
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  header a {
+    text-decoration: none;
+    color: inherit;
+    margin-left: 20px;
+  }
+  header a.logo{
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  @media screen and (max-width: 452px) {
+    header{
+      flex-direction: column;
+    }
+    header a.logo{
+      font-size: 1.2rem;
+    }
+  }
+  /* Header Done */
+  
+  div.post{
+    display: grid;
+    /* border: 2px solid green; */
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+  @media screen and (min-width: 700px) {
+    div.post{
+        grid-template-columns: .9fr 1.1fr;
+        gap:80px;
+    }
+  }
+  .post .text h2{
+    font-size: 1.6rem;
+  }
+  .post .text a{
+    text-decoration: none;
+    color: inherit;
+  }
+  .post .image{
+    height:150px;
+    overflow:hidden;
+  }
+  .post .image a img{
+    object-fit:contain;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  div.post .info{
+    margin-bottom: 6px;
+    margin-top: 3px;
+    color: #888;
+    font-size:.7rem;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+  }
+  div.post .info a{
+  color: #333;
+  text-decoration: none;
+  }
+  
+  div.post p.summary{
+    margin-top: 10px;
+    line-height: 1.4rem;
+  }
+
+  .fronth2{
+    color: rgb(72, 72, 72);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  /* Posts done */
+
+  form.login, form.register{
+    padding: 10px;
+    /* border: 1px solid green; */
+    max-width: 500px;
+    margin: 0 auto;
+    /* margin-top: 30vh; */
+  }
+  input{
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px 7px;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.2rem;
+  }
+  button{
+    width: 100%;
+    padding: 7px 0px;
+    font-size: 0.9rem;
+    background-color: #323232;
+    color: rgb(223, 223, 223);
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  form.login h1, form.register h1{
+    text-align: center;
+    color: #3c3c3c;
+  }
+
+
+
+
+  div.post-page div.image{
+    max-height:300px;
+    display: flex;
+    overflow:hidden;
+}
+div.post-page div.image img{
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+}
+div.post-page a{
+    color:#333;
+    text-decoration: underline;
+}
+div.post-page h1{
+    text-align: center;
+    margin: 10px 0 5px;
+}
+div.post-page time{
+    text-align: center;
+    display: block;
+    font-size:1rem;
+    color:#aaa;
+    margin: 10px 0;
+}
+div.post-page div.author{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: .7rem;
+    font-weight: bold;
+}
+div.content p{
+    line-height: 1.7rem;
+    margin: 30px 0;
+}
+div.content li{
+    margin-bottom: 10px;
+}
+
+div.commentbanner{
+  background-color: rgb(67, 67, 67);
+  color: rgb(214, 214, 214);
+  padding: 10px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+}
+ div.commentList h3{
+  margin: 15px 0;
+ }
+ div.commentList ul li{
+  list-style:none;
+  margin-bottom: 10px;
+  /* background-color: #b5b5b5a1; */
+  border-bottom: 2px solid rgba(84, 84, 84, 0.571);
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 7px;
+ }
+
+ .deletebutton{
+  background-color: rgb(146, 0, 0);
+  color: rgba(251, 224, 224, 0.908);
+  font-weight: 600;
+  width: 25%;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-radius: 8px;
+  margin-top: 50px;
+ }
+ h1.notfound{
+  font-size: 2rem;
+  color: #571b1b;
+  text-align: center;
+  margin-top: 35vh;
+ }
+
+  
