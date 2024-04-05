@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import {Navigate} from "react-router-dom";
 import { useUserInfo } from '../context/UserContext';
 
+import Cookies from 'js-cookie';
+
 function Login() {
 
   const [username, setUsername] = useState("");
@@ -18,31 +20,15 @@ function Login() {
       body : JSON.stringify({username, password}),
       credentials: 'include'
     })
-    
-    console.log(response)
+    const rd = await response.json();
     if(!response.ok){
-      let rd = await response.json();
       setMessage(rd.message);
     }else{
       console.log("I will navigate")
+      Cookies.set("token", rd.token);
+      setUserInfo(rd.info);
       setIsLoggedIn(true);
-      verifyUser();
       setRedirect(true);
-    }
-  }
-
-  async function verifyUser() {
-    try {
-      const response = await fetch('http://localhost:4000/user/verify', { credentials: 'include' });
-      const rd = await response.json();
-      if (!response.ok) {
-        console.log(rd.message);
-      } else {
-        console.log(rd.message);
-        setUserInfo(rd.info);
-      }
-    } catch (error) {
-      console.error('Error fetching data:', error);
     }
   }
   

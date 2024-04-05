@@ -56,7 +56,9 @@ async function handleViewBlog(req, res){
       const blog = await Blog.findById(req.params.id).populate("createdBy");
       if(!blog) return res.status(404).json({ message: 'Blog not found' });
       const comments = await Comment.find({blogId : blog._id}).populate("createdBy");
-      res.json({blog, comments});
+
+      const info = req.user;
+      res.status(200).json({blog, comments, info});
     } catch (error) {
       return res.status(404).json({ message: 'Blog not found' });
     }

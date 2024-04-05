@@ -13,29 +13,19 @@ function ViewBlog() {
     const navigate = useNavigate();
 
     useEffect(()=>{
-        fetch(`http://localhost:4000/blog/${id}`).then((response)=>{
+        fetch(`http://localhost:4000/blog/${id}`, { credentials: 'include' }).then((response)=>{
             response.json().then(res=>{
               setBlog(res.blog);
               setComments(res.comments);
+
+              if(res.info!==null){
+                setIsLoggedIn(true);
+                setUserInfo(res.info);
+              }else {
+                setIsLoggedIn(false);
+              }
             })
-    }, [])
-
-
-        async function verifyUser() {
-          try {
-            const response = await fetch('http://localhost:4000/user/verify', { credentials: 'include' });
-            const rd = await response.json();
-            if (!response.ok) {
-              setIsLoggedIn(false);
-            } else {
-              setIsLoggedIn(true);
-              setUserInfo(rd.info);
-            }
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-        }
-          verifyUser();
+        })
     }, [])
 
     function addcomment(){

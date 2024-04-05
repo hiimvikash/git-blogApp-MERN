@@ -38,12 +38,12 @@ function Header() {
   const username = userInfo?.username;
   return (
     <header>
-        <Link to="/allblogs" className="logo">Blogify</Link>
+        <Link to="/allblogs" className="logo">Blogefy</Link>
         <nav>
           {username && (
           <>
-            <Link to="/create">Create Blog</Link>
             <Link to="/">My Blogs</Link>
+            <Link to="/create">Create Blog</Link>
             <a onClick={logout} style={{cursor:"pointer"}}>Logout</a>
           </>
         )}
